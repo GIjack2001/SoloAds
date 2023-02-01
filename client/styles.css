@@ -3,3 +3,11 @@
   width: 100px;
   background-color: red;
 }
+
+.adContainer {
+  margin: 5vh 0 5vh 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 95vw;
+}
