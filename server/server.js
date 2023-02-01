@@ -2,12 +2,13 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
+const apiRouter = require('./routes/api');
 
 // const userController = require('./controllers/userController');
 // const cookieController = require('./controllers/cookieController');
 // const sessionController = require('./controllers/sessionController');
 
-const PORT = 3001;
+const PORT = 3000;
 
 const app = express();
 
@@ -41,7 +42,7 @@ app.get('/', (req, res) => {
   //console.log('working');
   res.sendFile(path.resolve(__dirname, '../client/index.html'));
 });
-
+app.use('/api', apiRouter);
 /**
  * signup
  */
