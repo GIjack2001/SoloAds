@@ -20,7 +20,7 @@ router.get('/film', starWarsController.getFilm, (req, res) =>
   res.status(200).json({})
 );
 
-router.post('/character', starWarsController.addCharacter, (req, res) =>
+router.post('/createad', starWarsController.addCharacter, (req, res) =>
   res.status(200).json({})
 );
 

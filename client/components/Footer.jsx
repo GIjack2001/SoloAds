@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 
-function Header(props) {
+function Footer(props) {
   return (
     <div className='header'>
-      <img
-        className='logo'
-        src='http://localhost:3000/client/logo-color.svg'
-      ></img>
       <div className='verticalWrap'>
-        <h1>Welcome Vincent !</h1>
+        <p>SoloAds All rights reserved</p>
         <p className='tagline'>Creating ads can be your solo project!</p>
       </div>
     </div>
   );
 }
-export default Header;
+export default Footer;

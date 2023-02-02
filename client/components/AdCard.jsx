@@ -17,7 +17,7 @@ const AdCard = ({ info, openModal }) => {
     CTA,
     CTA_font_family,
     CTA_BG_color,
-    CTA_FONT_color,
+    CTA_font_color,
     CTA_link,
     author_id,
   } = info;

@@ -64,7 +64,7 @@ ALTER TABLE public.ads ADD CONSTRAINT "ads_fk0" FOREIGN KEY ("author_id") REFERE
 
  INSERT INTO public.users VALUES (2, 'John', 'Doe');
 
- INSERT INTO public.ads VALUES (2, 'First Ad', 'Most definitely the best ad you have ever seen', 320, 180, 'Solid', "#0492c2", NULL, NULL, 'My Headline', NULL, 'Sub-healine 1', 'Click Here', NULL, NULL, NULL, NULL, 1);
+ INSERT INTO public.ads VALUES (2, 'First Ad', 'Most definitely the best ad you have ever seen', 320, 180, 'Solid', "#0492c2", NULL, NULL, 'My Headline', NULL, 'Sub-headline 1', 'Click Here', NULL, NULL, NULL, NULL, 1);
 
 
 

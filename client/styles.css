@@ -1,3 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Rosario&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two&display=swap');
+
+body {
+  background-color: rgba(119, 212, 252, 0.2);
+  font-family: Rosario, Arial, Helvetica, sans-serif;
+}
+h1 {
+  font-family: 'Lobster Two';
+  margin-bottom: 15px;
+}
+h2 {
+  font-family: 'Lobster Two';
+}
+article {
+  margin: 12px 15px;
+  padding: 5px 20px 5px 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.75) 7px 6px 11px -10px;
+}
+article:hover {
+  margin: 12px 15px;
+  padding: 5px 20px 5px 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.75) 7px 6px 11px -5px;
+}
+.tagline {
+  font-family: rosario;
+  font-size: 1.2em;
+  margin-top: 0;
+}
 .overviewItem {
   height: 100px;
   width: 100px;
@@ -10,4 +41,48 @@
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 95vw;
+}
+
+.logo {
+  width: 10vw;
+  position: absolute;
+  left: 0px;
+}
+
+.header {
+  background-color: #77d4fc;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: -10px;
+  top: -10px;
+  align-items: center;
+  padding: 25px 10px 25px 10px;
+  width: 100vw;
+}
+
+.verticalWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.verticalWrapleft {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.card_createad {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.codeDisplay {
+  min-height: 150px;
+  width: 70vw;
+  margin: 60px 15vw 80px 15vw;
+  background-color: lightgrey;
+  border-radius: 15px;
+  border-style: dashed;
+  border-color: grey;
+  border-width: 1px;
 }

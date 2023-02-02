@@ -67,9 +67,11 @@ starWarsController.getFilm = (req, res, next) => {
 
 starWarsController.addCharacter = (req, res, next) => {
   // write code here
-  console.log(req.body);
+  console.log('hello from controller' + JSON.stringifyreq.body);
   const {} = req.body;
-  db.query('');
+  db.query(
+    'INSERT INTO ads (title, description, width, height, "BG-type", "BG-color", "BG-image", "HL-font-family", headline, "SHL-font-family", "sub-headline", "CTA", "CTA-font-family", "CTA-FONT-color", "CTA-link", author_id) VALUES (\'First Ad\', \'Most definitely the best ad you have ever seen\', 320, 180, \'Solid\', \'#0492c2\', NULL, NULL, \'My Headline\', NULL, \'Sub-healine 1\', \'Click Here\', NULL, NULL, NULL, 1)'
+  );
   next();
 };
 
