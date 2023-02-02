@@ -52,13 +52,13 @@ class Overview extends Component {
       <section className='mainSection'>
         <header className='pageHeader'>
           <h2>Ads</h2>
-          <Link to={'/create'}>
-            <button type='button' className='btnSecondary'>
-              Create a new ad!
-            </button>
-          </Link>
         </header>
         <div className='adContainer'>{adElems}</div>
+        <Link to={'/create'}>
+          <button type='button' className='btnSecondary'>
+            Create a new ad!
+          </button>
+        </Link>
       </section>
     );
   }
