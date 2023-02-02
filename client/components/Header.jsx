@@ -5,7 +5,7 @@ function Header(props) {
     <div className='header'>
       <img
         className='logo'
-        src='http://localhost:3000/client/logo-color.svg'
+        src='http://localhost:3000/client/logo-no-background.svg'
       ></img>
       <div className='verticalWrap'>
         <h1>Welcome Vincent !</h1>

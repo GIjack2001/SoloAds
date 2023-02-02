@@ -12,20 +12,34 @@ h1 {
 h2 {
   font-family: 'Lobster Two';
 }
+h3 {
+  margin-top: 0;
+}
+input {
+  width: 250px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border-style: none;
+}
+input:focus {
+  box-shadow: rgba(0, 0, 0, 0.75) 7px 6px 5px -5px;
+  border-style: none;
+}
 article {
   margin: 12px 15px;
-  padding: 5px 20px 5px 20px;
+  padding: 25px 30px 25px 30px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.75) 7px 6px 11px -10px;
+  background-color: rgba(119, 212, 252, 0.5);
 }
 article:hover {
   margin: 12px 15px;
-  padding: 5px 20px 5px 20px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.75) 7px 6px 11px -5px;
 }
 
 button {
+  margin: 25px 0px 0px 0px;
   padding: 0.7em 1.5em 0.7em 1.5em;
   font-weight: 500;
   background-color: transparent;
@@ -67,6 +81,7 @@ button:hover {
   width: 10vw;
   position: absolute;
   left: 15px;
+  max-height: 15vh;
 }
 
 .header {
@@ -79,7 +94,7 @@ button:hover {
   align-items: center;
   padding: 25px 10px 25px 10px;
   width: 100vw;
-  min-height: 15vh;
+  height: 15vh;
 }
 
 .verticalWrap {
@@ -98,7 +113,7 @@ button:hover {
   justify-content: space-between;
 }
 .codeDisplay {
-  min-height: 150px;
+  height: 4em;
   width: 70vw;
   margin: 60px 15vw 80px 15vw;
   background-color: lightgrey;
@@ -106,6 +121,10 @@ button:hover {
   border-style: dashed;
   border-color: grey;
   border-width: 1px;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .pageHeader {
   margin-left: 20px;
@@ -117,4 +136,16 @@ button:hover {
 }
 .mainSection {
   margin-bottom: 5vh;
+}
+.createAd {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #77d4fc;
+  min-width: 10px;
+}
+.createCharFields {
+  margin: 5px 10px;
+}
+.hiddenCharFields {
+  display: none;
 }

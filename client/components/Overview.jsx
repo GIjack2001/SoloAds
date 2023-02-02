@@ -44,21 +44,16 @@ class Overview extends Component {
 
     if (!ads.length) return <div>Sorry, no characters found</div>;
 
-    const adElems = ads.map((char, i) => {
-      return <AdCard key={i} info={char} openModal={this.openModal} />;
+    const adElems = ads.map((ad, i) => {
+      return <AdCard key={i} info={ad} openModal={this.openModal} />;
     });
 
     return (
       <section className='mainSection'>
         <header className='pageHeader'>
-          <h2>Ads</h2>
+          <h2>Saved ads</h2>
         </header>
         <div className='adContainer'>{adElems}</div>
-        <Link to={'/create'}>
-          <button type='button' className='btnSecondary'>
-            Create a new ad!
-          </button>
-        </Link>
       </section>
     );
   }
