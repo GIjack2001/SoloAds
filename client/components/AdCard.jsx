@@ -1,6 +1,15 @@
 import React from 'react';
+import Overview from './Overview';
 
 const AdCard = ({ info, openModal }) => {
+  const deleteAd = (id) => {
+    fetch(`/api/delete/${id}`, {
+      method: 'DELETE',
+    })
+      .then(() => Overview.refresh())
+      .catch((err) => console.log('adCreator fetch /api/delete: ERROR: ', err));
+  };
+
   const {
     _id,
     title,
@@ -24,9 +33,13 @@ const AdCard = ({ info, openModal }) => {
   console.log(info);
   return (
     <article
-      className='card charCard'
+      className='charCard'
       style={{
         backgroundColor: info['BG-color'],
+        backgroundImage: 'url("' + info['BG-image'] + '")',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        color: info['CTA-FONT-color'],
       }}
     >
       <div className='charHeadContainer'>
@@ -35,6 +48,26 @@ const AdCard = ({ info, openModal }) => {
       <ul className='charDetailsList'>
         <li className='charDetail'>Description: {description}</li>
       </ul>
+      <div className='hidden-child-wrapper'>
+        <div className='hidden-child-green'>
+          <img
+            className='icons'
+            src='http://localhost:3000/client/icons8-pencil-drawing-64.png'
+          ></img>
+        </div>
+        <div
+          className='hidden-child-red'
+          onClick={() => {
+            deleteAd(_id);
+            window.location.reload(false);
+          }}
+        >
+          <img
+            className='icons'
+            src='http://localhost:3000/client/icons8-trash-can-64.png'
+          ></img>
+        </div>
+      </div>
     </article>
   );
 };

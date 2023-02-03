@@ -113,7 +113,6 @@ button:hover {
   justify-content: space-between;
 }
 .codeDisplay {
-  height: 4em;
   width: 70vw;
   margin: 60px 15vw 80px 15vw;
   background-color: lightgrey;
@@ -124,7 +123,9 @@ button:hover {
   padding: 2em;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  min-height: 4em;
 }
 .pageHeader {
   margin-left: 20px;
@@ -148,4 +149,37 @@ button:hover {
 }
 .hiddenCharFields {
   display: none;
+}
+.charCard > .hidden-child-wrapper {
+  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+}
+.charCard:hover > .hidden-child-wrapper {
+  visibility: visible;
+}
+.hidden-child-green {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
+  width: 50%;
+  height: 40px;
+}
+.hidden-child-red {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: coral;
+  width: 50%;
+  height: 40px;
+}
+.icons {
+  height: 25px;
+}
+.charCard {
+  width: 18vw;
+  min-width: 200px;
 }

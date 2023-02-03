@@ -13,9 +13,24 @@ class Overview extends Component {
         open: false,
       },
     };
+    this.refresh = this.refresh.bind(this);
   }
 
   componentDidMount() {
+    fetch('/api/')
+      .then((res) => res.json())
+      .then((ads) => {
+        if (!Array.isArray(ads)) ads = [];
+        return this.setState({
+          ads,
+          fetchedChars: true,
+        });
+      })
+      .catch((err) =>
+        console.log('Overview.componentDidMount: get ads: ERROR: ', err)
+      );
+  }
+  refresh() {
     fetch('/api/')
       .then((res) => res.json())
       .then((ads) => {

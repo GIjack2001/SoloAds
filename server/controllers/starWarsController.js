@@ -59,6 +59,23 @@ starWarsController.getHomeworld = (req, res, next) => {
     });
 };
 
+starWarsController.deleteAds = (req, res, next) => {
+  db.query('DELETE FROM ads WHERE _id =' + Number(req.params.id))
+    .then((result) => {
+      // console.log('result',result.rows);
+      console.log(result);
+      res.locals.deletems = 'deleted it at _id:' + req.query.id;
+      return next();
+    })
+    .catch((e) => {
+      return next({
+        log: e,
+        status: 500,
+        message: { err: 'error deleting and ad' },
+      });
+    });
+};
+
 starWarsController.getFilm = (req, res, next) => {
   // write code here
 
@@ -70,7 +87,64 @@ starWarsController.addCharacter = (req, res, next) => {
   console.log('hello from controller' + JSON.stringify(req.body));
   const {} = req.body;
   db.query(
-    'INSERT INTO ads (title, description, width, height, "BG-type", "BG-color", "BG-image", "HL-font-family", headline, "SHL-font-family", "sub-headline", "CTA", "CTA-font-family", "CTA-FONT-color", "CTA-link", author_id) VALUES (\'First Ad\', \'Most definitely the best ad you have ever seen\', 320, 180, \'Solid\', \'#0492c2\', NULL, NULL, \'My Headline\', NULL, \'Sub-healine 1\', \'Click Here\', NULL, NULL, NULL, 1)'
+    'INSERT INTO ads (title, description, width, height, "BG-type", "BG-color", "BG-image", "HL-font-family", headline, "SHL-font-family", "sub-headline", "CTA", "CTA-font-family","CTA-BG-color", "CTA-FONT-color", "CTA-link", author_id) VALUES (' +
+      "'" +
+      req.body.title +
+      "'" +
+      ', ' +
+      "'" +
+      req.body.description +
+      "'" +
+      ', ' +
+      req.body.width +
+      ',' +
+      req.body.height +
+      ',' +
+      "'Solid'," +
+      "'" +
+      req.body.BG_color +
+      "'" +
+      ',' +
+      "'" +
+      req.body.BG_image +
+      "'" +
+      ',' +
+      "'" +
+      req.body.HL_font_family +
+      "'" +
+      ',' +
+      "'" +
+      req.body.headline +
+      "'" +
+      ',' +
+      "'" +
+      req.body.SHL_font_family +
+      "'" +
+      ',' +
+      "'" +
+      req.body.sub_headline +
+      "'" +
+      ',' +
+      "'" +
+      req.body.CTA +
+      "'" +
+      ',' +
+      "'" +
+      req.body.CTA_font_family +
+      "'" +
+      ',' +
+      "'" +
+      req.body.CTA_BG_color +
+      "'" +
+      ',' +
+      "'" +
+      req.body.CTA_font_color +
+      "'" +
+      ',' +
+      "'" +
+      req.body.CTA_link +
+      "'" +
+      ', 1)'
   );
   next();
 };

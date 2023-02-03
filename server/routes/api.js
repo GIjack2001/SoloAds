@@ -24,4 +24,7 @@ router.post('/createad', starWarsController.addCharacter, (req, res) =>
   res.status(200).json({})
 );
 
+router.delete('/delete/:id', starWarsController.deleteAds, (req, res) =>
+  res.status(200).json(res.locals.deletems)
+);
 module.exports = router;
